@@ -1,0 +1,29 @@
+{
+  "name": "fuc",
+  "version": "0.1.0",
+  "description": "Functional Utilities for Coffeescript and Javascript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/brainrape/fuc.git"
+  },
+  "keywords": [
+    "functional",
+    "fun",
+    "utility",
+    "util",
+    "coffee",
+    "coffeescript",
+    "js",
+    "javascript"
+  ],
+  "author": "brainrape",
+  "license": "public domain",
+  "bugs": {
+    "url": "https://github.com/brainrape/fuc/issues"
+  },
+  "homepage": "https://github.com/brainrape/fuc"
+}

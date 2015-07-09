@@ -57,7 +57,8 @@ Documentation
     # the second argument and possibly more - ultimate flexibility
 
     flip (fn) -> fn
-    # takes a function with two or more arguments, returns it with the first two # arguments flipped, and curried
+    # takes a function with two or more arguments, returns it with the first two
+    # arguments flipped, and curried
 
     flap (arg, fn [, args...]) -> result
     obj._flap (fn [, args...]) -> result

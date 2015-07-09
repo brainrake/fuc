@@ -1,0 +1,26 @@
+{
+  "name": "fuc",
+  "version": "0.1.0",
+  "homepage": "https://github.com/brainrape/fuc",
+  "authors": [
+    "Márton Boros <martonboros@gmail.com>"
+  ],
+  "description": "Functional Utilities for Coffeescript and Javascript",
+  "main": "fuc.coffee",
+  "keywords": [
+    "functional",
+    "fun",
+    "utilities",
+    "util",
+    "coffeescript",
+    "coffee"
+  ],
+  "license": "public domain",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

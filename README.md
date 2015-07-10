@@ -26,7 +26,7 @@ Also, fuc the browser (TODO)
 
 If you think that looks dangerous, you can fuc less but stay safe:
 
-    {__, thus, fap, extend} = require 'fuc'
+    {__, thus, fap, unite} = require 'fuc'
 
 
 Srsly? Why?

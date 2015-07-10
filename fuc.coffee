@@ -1,8 +1,8 @@
 module.exports = Fuc =
-  __: (arg, args...) -> console.log arg, args...; arg
-  ___: curry (prefix, arg, args...) -> console.log prefix, arg, args...; arg
   curry: curry = (f) -> (a, b...) ->
     if b[0] is undefined then ((b...) -> f a, b...) else f a, b...
+  __: (arg, args...) -> console.log arg, args...; arg
+  ___: curry (prefix, arg, args...) -> console.log prefix, arg, args...; arg
   flip: (f) -> curry (a, b, c...) -> f b, a, c...
   flap: curry (arg, f, args...) -> f arg, args...
   thus: curry (o, f) -> f.bind o
@@ -10,7 +10,8 @@ module.exports = Fuc =
   fap: curry (f, arr) -> arr.map(f).filter (i) -> i not in [undefined, null]
   zop: (arr) -> o={}; o[k] = v for [k, v] in arr; o
   _it_all: ->
-    (window || global)[k] = Fuc[k] for k of Fuc when k is not '_it_all'
+    glo = (do -> this)['window'] || (do -> this)['global']
+    for k of Fuc when k != '_it_all' then glo[k] = Fuc[k]
     Object.prototype.__ = (args...) -> console.log @, args...;
     for k in ['flap', 'thus', 'unite']
       Object.prototype["_#{k}"] = (arg...) -> Fuc[k] this, arg...

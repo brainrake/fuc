@@ -2,7 +2,7 @@
   "name": "fuc",
   "version": "0.1.0",
   "description": "Functional Utilities for Coffeescript and Javascript",
-  "main": "index.js",
+  "main": "fuc.coffee",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

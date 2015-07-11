@@ -1,8 +1,10 @@
 module.exports = Fuc =
   curry: curry = (f) -> (a, b...) ->
-    if b[0] is undefined then ((b...) -> f a, b...) else f a, b...
-  __: (arg, args...) -> console.log arg, args...; arg
-  ___: curry (prefix, arg, args...) -> console.log prefix, arg, args...; arg
+    if not b.length then ((b...) -> f a, b...) else f a, b...
+  isO: (v) -> Object.prototype.toString.call(v) == '[object Object]'
+  pp: (o) -> if Fuc.isO o then JSON.stringify o, null, 4 else o.toString()
+  __: (args...) -> console.log (args.map Fuc.pp)...; args[0]
+  ___: curry (prefix, args...) -> Fuc.__ prefix, args...; args[0]
   flip: (f) -> curry (a, b, c...) -> f b, a, c...
   flap: curry (arg, f, args...) -> f arg, args...
   thus: curry (o, f) -> f.bind o

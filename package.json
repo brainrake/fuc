@@ -1,10 +1,10 @@
 {
   "name": "fuc",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Functional Utilities for Coffeescript and Javascript",
   "main": "fuc.coffee",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "coffee test.coffee"
   },
   "repository": {
     "type": "git",
@@ -25,5 +25,8 @@
   "bugs": {
     "url": "https://github.com/brainrape/fuc/issues"
   },
-  "homepage": "https://github.com/brainrape/fuc"
+  "homepage": "https://github.com/brainrape/fuc",
+  "devDependencies": {
+    "coffee-script": "^1.9.3"
+  }
 }

@@ -42,41 +42,47 @@ I'll add some async helpers as well, I promise!
 Documentation
 -------------
 
-    __ (arg [, args...]) -> arg
-    arg.__([args...]) -> arg
-    # console.log all arguments, return the first one. great for debugging.
-
-    ___ (prefix, arg [, args...]) -> arg
-    arg.___(prefix [, args...]) -> arg
-    # console.log prefix and all arguments, return first argument (after prefix)
-
-    curry (fn(a, b [, c...])) -> fn(b, a [, c...])
+    curry (Function(a, b [, c...])) -> Function(b, a [, c...])
     # takes a function with two or more arguments, returns a function that can
     # be called either with two or more arguments (same as the original),
     # or with one argument, in which case it returns a function that awaits
     # the second argument and possibly more - ultimate flexibility
 
-    flip (fn) -> fn
+    isO (value) -> Boolean
+    # returns true if value is an object (not a Boolean, Number, String or Array)
+
+    pp (value) -> String
+    # toString primitives; JSON.stringify and indent objects
+
+    __ (arg [, args...]) -> arg
+    arg.__([args...]) -> arg
+    # console.log all arguments, return the first one; uses pp
+
+    ___ (prefix, arg [, args...]) -> arg
+    arg.___(prefix [, args...]) -> arg
+    # console.log prefix and all args, return first arg (after prefix); uses pp
+
+    flip (Function) -> Function
     # takes a function with two or more arguments, returns it with the first two
     # arguments flipped, and curried
 
-    flap (arg, fn [, args...]) -> result
-    obj._flap (fn [, args...]) -> result
+    flap (arg, Function [, args...]) -> result
+    obj._flap (Function [, args...]) -> result
     # applies the function to the argument(s); `flip apply`
 
-    thus (this_object, fn) -> fn
-    this_object._thus (fn) -> fn
+    thus (this_object, Function) -> Function
+    this_object._thus (Function) -> Function
     # bind the `this` object in the function body; flipped `Function.bind`
 
-    unite (object, other_object [, other_objects...]) -> object
-    object._unite (other_object [, other_objects...]) -> object
+    unite (Object1, Object2 [, Objects...]) -> Object
+    object1._unite (Object2 [, Objects...]) -> Object
     # create a new object with properties merged from all the arguments
 
-    fap (fn, array) -> array
-    array._fap (fn) -> array
+    fap (Function, Array) -> Array
+    array._fap (Function) -> Array
     # map, then filter out undefineds and nulls (but not `false`s, `0`s or ''s)
 
-    zop (array) -> object
+    zop (Array) -> object
     array.zop() -> object
     # create an object from a list of pairs of [key, value]
 

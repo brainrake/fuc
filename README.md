@@ -7,6 +7,7 @@ So you have `async` for breaking all your `Promise`s?
 
 Fuc it all!
 
+```coffeescript
     require('fuc')._it_all()           # fuc the global namespace, fuc prototypes
 
     1 + __ 2                           # logs 2, returns 3
@@ -17,31 +18,35 @@ Fuc it all!
 
     [1, 2, 4]._fap (it) ->
       if it%2 then null else it-2      # => [0, 2]
-
+```
 
 Also, fuc the browser (TODO)
 
+```html
     <script src='out/fuc.min.js'></script>
     <script>Fuc.it.all()</script>
+```
 
 If you think that looks dangerous, you can fuc less but stay safe:
 
+```coffeescript
     {__, thus, fap, unite} = require 'fuc'
-
+```
 
 Srsly? Why?
 -----------
 
-Yes. `lodash` is nice, but most functions have wrong argument order, and they're not curried. Also some are sorely missing (like `flip`).
+Yes. `lodash` is nice, but functions aren't curried, and some are sorely missing (like `flip`).
 
-So, here's a bundle of functions, in all its 20-line glory, that most of the time obviates the need to include helper libraries, for me at least.
+So, here's a bundle of functions, in all its 22-line glory, that most of the time obviates the need to include helper libraries, for me at least.
 
-I'll add some async helpers as well, I promise!
+I'll add some `async` helpers as well, I `promise`!
 
 
 Documentation
 -------------
 
+```coffeescript
     curry (Function(a, b [, c...])) -> Function(b, a [, c...])
     # takes a function with two or more arguments, returns a function that can
     # be called either with two or more arguments (same as the original),
@@ -85,7 +90,7 @@ Documentation
     zop (Array) -> object
     array.zop() -> object
     # create an object from a list of pairs of [key, value]
-
+```
 
 All functions with two or more arguments can be used in a curried fashion: If you call them with only one argument, they will return a function awaiting the other argument (and any optional arguments).
 
@@ -102,7 +107,9 @@ Inspecting runtime values is much more important than in static languages: where
 
 Logging could be more convenient though. When you want to log a subexpression, you have to copy it, since console.log doesn't return anything. Also, it's kind of boring to type it all the time. Well, that's fixed now, just insert '__' wherever, and add parens as needed.
 
+```coffeescript
      Array(16).join(__ 'here'-1) + 'Fapman'      # logs 'NaN', returns something
+```
 
 I used to include the definition for `__` at the top of every single Coffeescript/Javascript source file I wrote, plus usually a few of the other functions here. Now I don't have to.
 

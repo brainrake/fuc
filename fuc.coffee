@@ -1,6 +1,6 @@
 module.exports = Fuc =
-  curry: curry = (f) -> (a, b...) ->
-    if not b.length then ((b...) -> f a, b...) else f a, b...
+  curry: curry = (f) -> (a, b...) -> if b.length then f a, b...           else
+                                                      (b...) -> f a, b...
   isO: (v) -> Object.prototype.toString.call(v) == '[object Object]'
   pp: (o) -> if Fuc.isO o then JSON.stringify o, null, 4 else o.toString()
   __: (args...) -> console.log (args.map Fuc.pp)...; args[0]

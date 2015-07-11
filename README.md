@@ -47,7 +47,7 @@ Documentation
 -------------
 
 ```coffeescript
-    curry : (Function(a, b [, c...])) -> Function(b, a [, c...])
+    curry : (Function) -> Function
     # takes a function with two or more arguments, returns a function that can
     # be called either with two or more arguments (same as the original),
     # or with one argument, in which case it returns a function that awaits

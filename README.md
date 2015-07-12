@@ -7,30 +7,38 @@ So you have `async` for breaking all your `Promise`s?
 
 Fuc it all!
 
+```bash
+> npm install fuc
+```
+
 ```coffeescript
-    require('fuc')._it_all()           # fuc the global namespace, fuc prototypes
+require('fuc')._it_all()           # fuc the global namespace, fuc prototypes
 
-    1 + __ 2                           # logs 2, returns 3
+1 + __ 2                           # logs 2, returns 3
 
-    unite {a: 1}, {b: 2}               # => {a: 1, b: 2}
+unite {a: 1}, {b: 2}               # => {a: 1, b: 2}
 
-    do thus {a: 1}, -> this.a + 1      # => 2
+do thus {a: 1}, -> this.a + 1      # => 2
 
-    [1, 2, 4]._fap (it) ->
-      if it%2 then null else it-2      # => [0, 2]
+[1, 2, 4]._fap (it) ->
+  if it%2 then null else it-2      # => [0, 2]
 ```
 
 Also, fuc the browser (TODO)
 
+```bash
+> bower install fuc
+```
+
 ```html
-    <script src='out/fuc.min.js'></script>
-    <script>Fuc.it.all()</script>
+<script src='bower_components/fuc/fuc.min.js'></script>
+<script>Fuc._it_all()</script>
 ```
 
 If you think that looks dangerous, you can fuc less but stay safe:
 
 ```coffeescript
-    {__, thus, fap, unite} = require 'fuc'
+{__, fap, thus, unite} = require 'fuc'
 ```
 
 Srsly? Why?

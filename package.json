@@ -1,6 +1,6 @@
 {
   "name": "fuc",
-  "version": "0.3.3",
+  "version": "0.4.0",
   "description": "Functional Utilities for Coffeescript and Javascript",
   "main": "fuc.coffee",
   "scripts": {

@@ -92,16 +92,16 @@ flap : (arg, Function [, args...]) -> result
 obj._flap : (Function [, args...]) -> result
 # applies the function to the argument(s); `flip apply`
 
-thus : (this_object, Function) -> Function
-this_object._thus : (Function) -> Function
+dnib : (this_object, Function) -> Function
+this_object._dnib : (Function) -> Function
 # bind the `this` object in the function body; flipped `Function.bind`
 
 unite : (Object1, Object2 [, Objects...]) -> Object
 object1._unite : (Object2 [, Objects...]) -> Object
 # create a new object with properties merged from all the arguments
 
-fap : (Function, Array) -> Array
-array._fap : (Function) -> Array
+maf : (Function, Array) -> Array
+array._maf : (Function) -> Array
 # map, then filter out undefineds and nulls (but not `false`s, `0`s or ''s)
 
 zop : (Array) -> Object

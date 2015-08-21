@@ -17,17 +17,18 @@ eq (minus 2, 1), (F.flip minus)(1, 2)
 
 eq (minus1 2), F.flap 2, minus1
 
-eq (1), do F.thus {a:1}, -> @a
-eq {a:1}, (F.thus {}, (@a) -> @)(1)
+eq (1), do F.dnib {a:1}, -> @a
+eq {a:1}, (F.dnib {}, (@a) -> @)(1)
 
-eq {a:1},      F.unite {a:1}, {}
-eq {a:1},      F.unite {},    {a:1}
-eq {a:2},      F.unite {a:1}, {a:2}
-eq {a:2},      F.unite {a:1}, {a:2}
-eq {a:1, b:2}, F.unite {a:1}, {b:2}
-eq {a:2, b:2}, F.unite {a:1}, {a:2, b:2}
+eq {a:1},           F.uni {a:1}, {}
+eq {a:1},           F.uni {},    {a:1}
+eq {a:2},           F.uni {a:1}, {a:2}
+eq {a:2},           F.uni {a:1}, {a:2}
+eq {a:1, b:2},      F.uni {a:1}, {b:2}
+eq {a:2, b:2},      F.uni {a:1}, {a:2, b:2}
+eq {a:1, b:2, c:3}, F.uni {a:1}, {b:2}, {c:3}
 
-eq [0, 2], F.fap ((n) -> if n%2 then null else n-2), [1, 2, 4]
+eq [0, 2], F.maf ((n) -> if n%2 then null else n-2), [1, 2, 4]
 
 eq {a:1, b:2}, F.zop [['a', 1], ['b', 2]]
 
